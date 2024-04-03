@@ -1,4 +1,4 @@
-from Dot import Dot
+from .Dot import Dot
 
 class Line:
     def __init__(self, dot1: Dot, dot2: Dot):
