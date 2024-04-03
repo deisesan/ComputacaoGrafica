@@ -11,12 +11,12 @@ class ReadFile:
 
     # Busca dos Elementos -> Viewport
     viewport_xml = self.tree.find("./viewport")
-    xvmin = viewport_xml.find("vpmin").get("x")
-    yvmin = viewport_xml.find("vpmin").get("y")
-    xvmax = viewport_xml.find("vpmax").get("x")
-    yvmax = viewport_xml.find("vpmax").get("y")
+    xvpmin = viewport_xml.find("vpmin").get("x")
+    yvpmin = viewport_xml.find("vpmin").get("y")
+    xvpmax = viewport_xml.find("vpmax").get("x")
+    yvpmax = viewport_xml.find("vpmax").get("y")
     
-    self.viewport = Viewport(xvmin, yvmin, xvmax, yvmax)
+    self.viewport = Viewport(xvpmin, yvpmin, xvpmax, yvpmax)
 
     # Busca dos Elementos -> Window
     window_xml = self.tree.find("./window")

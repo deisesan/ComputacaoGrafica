@@ -19,9 +19,11 @@ class WriteFile:
         dots_transform = []
 
         for dot in dots:
-            xv, yv = self.convert.transform(dot.x, dot.y)
-            dot_v = Dot2D(xv, yv)
+            xvp, yvp = self.convert.transform(dot.x, dot.y)
+            dot_v = Dot2D(xvp, yvp)
             dots_transform.append(dot_v)   
+
+        self.dots_transform = dots_transform
 
         # Aplicando Transformada - Lines
         lines_transform = []
@@ -36,19 +38,23 @@ class WriteFile:
             line = Line2D(dot_v1, dot_v2)
 
             lines_transform.append(line)
-        
+
+        self.lines_transform = lines_transform
+
         # Aplicando Transformada - Polygons
-        polygon_transform = []
+        polygons_transform = []
 
         for polygon in polygons:
             dots_polygon_transform = []
 
             for dot in polygon:
-                xv, yv = self.convert.transform(dot.x, dot.y)
-                dot_v = Dot2D(xv, yv)
+                xvp, yvp = self.convert.transform(dot.x, dot.y)
+                dot_v = Dot2D(xvp, yvp)
                 dots_polygon_transform.append(dot_v)
 
-            polygon_transform.append(dots_polygon_transform)
+            polygons_transform.append(dots_polygon_transform)
+
+        self.polygons_transform = polygons_transform
 
         # Escrita no arquivo XML
         tree_out = etree.Element("dados")
@@ -70,7 +76,7 @@ class WriteFile:
         # Criando o elemento para os polígonos transformados
         polygon_transform_xml = etree.SubElement(tree_out, "poligonos")
 
-        for polygon in polygon_transform:
+        for polygon in polygons_transform:
             poligono_xml = etree.SubElement(polygon_transform_xml, "poligono")
             for dot in polygon:
                 etree.SubElement(poligono_xml, "ponto", x=str(dot.x), y=str(dot.y))

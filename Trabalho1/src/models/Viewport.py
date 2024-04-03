@@ -1,6 +1,6 @@
 class Viewport:
-    def __init__(self, xvmin, yvmin, xvmax, yvmax):
-        self.xvmin = float(xvmin)
-        self.yvmin = float(yvmin)
-        self.xvmax = float(xvmax)
-        self.yvmax = float(yvmax)
+    def __init__(self, xvpmin, yvpmin, xvpmax, yvpmax):
+        self.xvpmin = float(xvpmin)
+        self.yvpmin = float(yvpmin)
+        self.xvpmax = float(xvpmax)
+        self.yvpmax = float(yvpmax)

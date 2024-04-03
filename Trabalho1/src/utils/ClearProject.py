@@ -1,17 +1,18 @@
 import shutil
 import os
 
-class ClearProject:
-  # Clear
-  script_dir = os.path.dirname(os.path.abspath(__file__))
-  parent_dir = os.path.dirname(script_dir)
+class ClearProject:  
+  @staticmethod
+  def clear_cache():
+      diretorios = [
+          "gui",
+          "models",
+          "models/Objects2D",
+          "utils"
+      ]
 
-  pycache_path = os.path.join(script_dir, "__pycache__")
-  shutil.rmtree(pycache_path)
-  pycache_path = os.path.join(parent_dir, "models/__pycache__")
-  shutil.rmtree(pycache_path)
-  pycache_path = os.path.join(parent_dir, "models/Objects2D/__pycache__")
-  shutil.rmtree(pycache_path)
-  # pycache_path = os.path.join(parent_dir, "gui/__pycache__")
-  # shutil.rmtree(pycache_path)
-  
+      for diretorio in diretorios:
+          path = os.path.join(diretorio, "__pycache__")
+          if os.path.exists(path):
+              shutil.rmtree(path)
+              print(f"Cache removido de {path}")

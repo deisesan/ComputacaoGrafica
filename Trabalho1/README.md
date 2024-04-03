@@ -16,6 +16,7 @@ Bibliotecas:
 
     % pip install lxml
     % pip install PyQt5
+    % pip install --upgrade pyqt5
 
 Links Úteis:
 * https://github.com/mende1/guia-definitivo-de-markdown

@@ -12,13 +12,12 @@ class Convert:
         ywmin = self.window.ywmin
         ywmax = self.window.ywmax
 
-        xvmin = self.viewport.xvmin
-        xvmax = self.viewport.xvmax
-        yvmin = self.viewport.yvmin
-        yvmax = self.viewport.yvmax
+        xvpmin = self.viewport.xvpmin
+        xvpmax = self.viewport.xvpmax
+        yvpmin = self.viewport.yvpmin
+        yvpmax = self.viewport.yvpmax
 
-
-        xv = ((xw - xwmin) / (xwmax - xwmin)) * (xvmax - xvmin)
-        yv = (1 - ((yw - ywmin) / (ywmax - ywmin))) * (yvmax - yvmin)
+        xvp = ((xw - xwmin) / (xwmax - xwmin)) * (xvpmax - xvpmin)
+        yvp = (1 - ((yw - ywmin) / (ywmax - ywmin))) * (yvpmax - yvpmin)
         
-        return xv, yv
+        return xvp, yvp
