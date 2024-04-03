@@ -10,7 +10,8 @@ class ClearProject:
   shutil.rmtree(pycache_path)
   pycache_path = os.path.join(parent_dir, "models/__pycache__")
   shutil.rmtree(pycache_path)
-  pycache_path = os.path.join(parent_dir, "gui/__pycache__")
-  shutil.rmtree(pycache_path)
   pycache_path = os.path.join(parent_dir, "models/Objects2D/__pycache__")
   shutil.rmtree(pycache_path)
+  # pycache_path = os.path.join(parent_dir, "gui/__pycache__")
+  # shutil.rmtree(pycache_path)
+  

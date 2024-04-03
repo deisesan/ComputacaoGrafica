@@ -14,3 +14,4 @@ if __name__ == "__main__":
   
   # Limpeza das Pastas de Cache
   ClearProject()
+  
