@@ -9,7 +9,6 @@ if __name__ == "__main__":
   writeFile = WriteFile("../docs/saida.xml", readFile.viewport, readFile.window,
                         readFile.dots, readFile.lines, readFile.polygons)
 
-
   # Clear
   script_dir = os.path.dirname(os.path.abspath(__file__))
   pycache_path = os.path.join(script_dir, "utils", "__pycache__")
