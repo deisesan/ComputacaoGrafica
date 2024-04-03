@@ -1,8 +1,8 @@
-import shutil
-import os
+
 from utils.ReadFile import ReadFile
 from utils.WriteFile import WriteFile
-from utils.GUI import GUI
+from utils.ClearProject import ClearProject
+from gui.MainWindow import MainWindow
 
 if __name__ == "__main__":
   print("Olá, mundo!")
@@ -11,11 +11,6 @@ if __name__ == "__main__":
                         readFile.dots, readFile.lines, readFile.polygons)
 
   #Interface Gráfica 
-  GUI()
+  MainWindow()
   
-  # Clear
-  script_dir = os.path.dirname(os.path.abspath(__file__))
-  pycache_path = os.path.join(script_dir, "utils", "__pycache__")
-  shutil.rmtree(pycache_path)
-  pycache_path = os.path.join(script_dir, "models", "__pycache__")
-  shutil.rmtree(pycache_path)
+  ClearProject()

@@ -1,12 +1,13 @@
 from PyQt5.QtWidgets import QApplication, QMainWindow
+import sys
 
-class GUI_Window(QMainWindow):
+class Window(QMainWindow):
     def __init__(self):
         super().__init__()
 
-class GUI:
+class MainWindow:
   def __init__(self):
-    app = QApplication([])
-    window = GUI_Window()
+    app = QApplication(sys.argv)
+    window = Window()
     window.show()
     app.exec_()

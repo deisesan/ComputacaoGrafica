@@ -1,8 +1,8 @@
 from lxml import etree
 from models.Viewport import Viewport
 from models.Window import Window
-from models.Dot import Dot
-from models.Line import Line
+from models.Objects2D.Dot2D import Dot2D
+from models.Objects2D.Line2D import Line2D
 
 class ReadFile:
   def __init__(self, filename: str):
@@ -36,7 +36,7 @@ class ReadFile:
     for dot_xml in dots_xml:
         x = dot_xml.attrib['x']
         y = dot_xml.attrib['y']
-        dot = Dot(x, y)
+        dot = Dot2D(x, y)
         dots.append(dot)
 
     self.dots = dots
@@ -50,14 +50,14 @@ class ReadFile:
       x1 = line_xml[0].attrib['x']
       y1 = line_xml[0].attrib['y']
 
-      dot1 = Dot(x1, y1)
+      dot1 = Dot2D(x1, y1)
 
       x2 = line_xml[1].attrib['x']
       y2 = line_xml[1].attrib['y']
 
-      dot2 = Dot(x2, y2)
+      dot2 = Dot2D(x2, y2)
 
-      line = Line(dot1, dot2)
+      line = Line2D(dot1, dot2)
 
       lines.append(line)
 
@@ -74,7 +74,7 @@ class ReadFile:
       for dot_xml in polygon_xml.findall("./ponto"):
           x = dot_xml.attrib['x']
           y = dot_xml.attrib['y']
-          dot = Dot(x, y)
+          dot = Dot2D(x, y)
           dots_polygon.append(dot)
 
       polygons.append(dots_polygon)
