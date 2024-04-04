@@ -1,4 +1,5 @@
-from models import Viewport, Window
+from models.Viewport import Viewport
+from models.Window import Window
 
 class Convert:
     def __init__(self, window: Window, viewport: Viewport):
