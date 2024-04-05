@@ -15,4 +15,4 @@ class ClearProject:
           path = os.path.join(diretorio, "__pycache__")
           if os.path.exists(path):
               shutil.rmtree(path)
-              print(f"Cache removido de {path}")
+              print(f"Pasta __pycache__ removida de src/{diretorio}")
