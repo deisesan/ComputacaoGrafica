@@ -8,17 +8,19 @@
     * Email: fnelc.friedrich@gmail.com
     * Telefone: (38) 98819-2212
 
-Executar:
+### Executar:
 
-    py main.py
+Abra o terminal dentro da pasta src e execute o comando:
 
-Bibliotecas: 
+            py main.py
+
+### Bibliotecas: 
 
     % pip install lxml
     % pip install PyQt5
     % pip install --upgrade pyqt5
 
-Links Úteis:
+### Links Úteis:
 * https://github.com/mende1/guia-definitivo-de-markdown
 * https://docs.python.org/3/library/xml.etree.elementtree.html
 * https://pt.stackoverflow.com/a/240469/349226 (Solução pip)
